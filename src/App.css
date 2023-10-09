@@ -1,38 +1,172 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --color-orange: #ff5c00;
+  --color-drak: #2a2a2a;
+  --body-bg: #fff;
+  --text-color: var(--color-drak);
+  --border-color: var(--color-drak);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container {
+  width: 90%;
+  margin: auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.flex {
   display: flex;
-  flex-direction: column;
+  gap: 1rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+/* NAV BAR  */
+
+header {
+  box-shadow: 0 0 10px 5px gray;
+  position: sticky;
+  top: 0;
+  background: var(--body-bg);
+}
+
+.navigation {
+  justify-content: space-between;
   align-items: center;
+}
+
+.nav-left {
+  position: relative;
+  align-items: center;
+}
+
+.line::before {
+  content: '';
+  width: 4px;
+  height: 40%;
+  left: 35%;
+  position: absolute;
+  background: var(--color-orange);
+}
+
+.menu ul {
+  list-style: none;
+}
+
+/* HERO SECTION  */
+
+.hero-section {
+  padding-top: 10rem;
+  color: var(--text-color);
+}
+
+.hero {
+  grid-template-areas: 'left right';
+  background-color: var(--color-orange);
+  padding: 0 2rem;
+}
+
+.download-btn {
+  background: var(--color-drak);
+  padding: 0.8rem 2rem;
+  border-radius: 2rem;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.download-btn a {
+  color: #fff;
+}
+
+.left {
+  grid-area: left;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: column;
+  margin-left: 10vw;
 }
 
-.App-link {
-  color: #61dafb;
+.right {
+  grid-area: right;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: -5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.right img {
+  height: 100%;
+}
+
+/* INFO SECTION  */
+
+.banner {
+  margin-top: 7rem;
+  border: 2px solid var(--border-color);
+  padding: 2rem;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 100px;
+}
+
+.icon-container {
+  background: var(--color-orange);
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-container i {
+  color: #fff;
+  font-size: 2rem;
+}
+
+.info-divider {
+  background: var(--text-color);
+  width: 2px;
+  height: 50px;
+}
+
+.info-content div:nth-child(2) p {
+  color: var(--color-orange);
+}
+
+/* SKILLS SECTION  */
+
+.skills {
+  padding-top: 7rem;
+  font-size: 2rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+.skills > div div {
+  display: flex;
+
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.skills > div i {
+  font-size: 5rem;
+}
+
+.title {
+  text-align: center;
+  text-decoration: underline;
 }
